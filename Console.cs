@@ -60,12 +60,12 @@ namespace Consolation
 
 		void OnEnable ()
 		{
-			Application.RegisterLogCallback(HandleLog);
+			Application.logMessageReceived += HandleLog;
 		}
 
 		void OnDisable ()
 		{
-			Application.RegisterLogCallback(null);
+			Application.logMessageReceived -= HandleLog;
 		}
 
 		void Update ()
